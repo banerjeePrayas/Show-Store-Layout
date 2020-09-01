@@ -1,0 +1,10 @@
+.split {
+    display: inline-block;
+    flex: none;
+    /* width: 80%;
+    justify-content: center; */
+    /* flex-basis: 30%; */
+    flex-wrap: wrap;
+    min-width: 15rem;
+    padding: 0 2rem;
+}

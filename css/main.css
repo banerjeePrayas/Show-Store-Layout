@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    line-break: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 85%;
+    max-width: 65em;
+    margin: 0 auto;
+}
+
+.spacing>*+* {
+    margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--clr-accent, blue);
+    color: var(--clr-text, white);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    transition: transform 250ms ease-in-out, opacity 250ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.logo {
+    position: absolute;
+    text-align: center;
+    top: 1rem;
+    left: 50%;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.primary-title {
+    font-size: 3rem;
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero {
+    text-align: center;
+    padding: 10rem 0;
+    /* background-color: #222; */
+    color: white;
+    /* background-size: 10%; */
+    background-image: url(../img/shoe-3.png), radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    --clr-accent: #faa700;
+}
+
+/* @supports (property: value) {
+    .hero {
+        background-image: url(../img/shoe-3.png), radial-gradient(#444, #111);
+        background-blend-mode: multiply;
+    }
+} */
+
+/* Featured Section */
+section {
+    padding: 5rem 0rem 7rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+    line-height: 1;
+    color: #17353d;
+}
+
+.split {
+    display: flex;
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+}
+
+.featured {
+    background: #eee;
+}
+
+.featured__items {
+    display: block;
+    position: relative;
+    transform: scale(.90);
+    transition: transform 250ms ease-in-out;
+    color: #333;
+    text-align: center;
+}
+
+.featured__items:hover,
+.featured__items:focus {
+    transform: scale(1);
+}
+
+.featured__items::after {
+    content: '';
+    position: absolute;
+    padding: 75% 75% 0 0;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    z-index: -1;
+    background-color: #2193b0;
+}
+
+span {
+    display: block;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.featured__details {
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+.featured__items:hover .featured__details,
+.featured__items:focus .featured__details {
+    opacity: 1;
+}
+
+
+/* Products Section */
+.our-products {}
+
+.product {
+    background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+    padding: 3rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.product__title {
+    font-size: 4rem;
+    color: #fff;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.product__img {
+    margin: -5rem 0 0 0;
+}
+
+
+
+.shoe-red {
+    --clr-inner: #faa700;
+    --clr-outer: #e48d00;
+    --clr-accent: #a1173c;
+}
+
+.shoe-white {
+    --clr-inner: #fce4b3;
+    --clr-outer: #eac886;
+    --clr-accent: #2f4858;
+}
+
+.shoe-blue {
+    --clr-inner: #6dd5ed;
+    --clr-outer: #2193b0;
+    --clr-accent: #008951;
+}
+
+
+
+/* Footer Section */
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: #faa700;
+    color: #fff;
+}
+
+.footer a {
+    color: #a1173c;
+    font-weight: 700;
+}
+
+
+
+
+
+/* Media Queries */
+@media (min-width: 720px) {
+    .product {
+        text-align: left;
+    }
+
+    .product__img {
+        float: right;
+        width: 50%;
+        /* shape-outside: url(../img/shoe-1.png);
+        shape-margin: 2rem; */
+    }
+
+    .shoe-white .product__img {
+        float: left;
+    }
+
+    .shoe-white .product__title,
+    .shoe-white .product__description {
+        text-align: right;
+    }
+}
+
+@media (max-width: 720px) {
+    .product__title {
+        font-size: 2rem;
+    }
+}
